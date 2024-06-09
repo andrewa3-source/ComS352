@@ -1,0 +1,13 @@
+Andrew Ahrenkiel
+netid: andrewa3
+
+I worked on this project alone
+
+All API functions are implemented and working
+
+The concurrent tests output varies due to the RSFS_stat sometimes outputing while operations take place
+This is because the RSFS_stat is not integrated with the rw_mutex 
+
+api.c is the only file modified
+
+Thanks for your time, feel free to contact me at andrewa3@iastate.edu if you have an issue while grading and I will respond ASAP

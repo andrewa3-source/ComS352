@@ -1,0 +1,377 @@
+[main] result of calling sys_init: 0
+
+
+-------------------Test for Isolated Cases-------------------------
+
+[test_basic] have called to create 8 files.
+
+Current status of the file system:
+
+        File Name    Length   iNode #
+           Alice         0         0
+             Bob         0         1
+         Charlie         0         2
+           David         0         3
+          Elaine         0         4
+           Frank         0         5
+          George         0         6
+           Harry         0         7
+
+Total Data Blocks:   32,  Used: 0,  Unused: 32
+Total iNode Blocks:   8,  Used: 8,  Unused: 0
+Total Opened Files:   0
+
+[test_basic] have called to open 8 files.
+
+Current status of the file system:
+
+        File Name    Length   iNode #
+           Alice         0         0
+             Bob         0         1
+         Charlie         0         2
+           David         0         3
+          Elaine         0         4
+           Frank         0         5
+          George         0         6
+           Harry         0         7
+
+Total Data Blocks:   32,  Used: 0,  Unused: 32
+Total iNode Blocks:   8,  Used: 8,  Unused: 0
+Total Opened Files:   8
+
+[test_basic] have appended to each file.
+
+Current status of the file system:
+
+        File Name    Length   iNode #
+           Alice         5         0
+             Bob         6         1
+         Charlie        21         2
+           David        20         3
+          Elaine        30         4
+           Frank        30         5
+          George        42         6
+           Harry        40         7
+
+Total Data Blocks:   32,  Used: 10,  Unused: 22
+Total iNode Blocks:   8,  Used: 8,  Unused: 0
+Total Opened Files:   8
+
+[test_basic] have closed each file.
+
+Current status of the file system:
+
+        File Name    Length   iNode #
+           Alice         5         0
+             Bob         6         1
+         Charlie        21         2
+           David        20         3
+          Elaine        30         4
+           Frank        30         5
+          George        42         6
+           Harry        40         7
+
+Total Data Blocks:   32,  Used: 10,  Unused: 22
+Total iNode Blocks:   8,  Used: 8,  Unused: 0
+Total Opened Files:   0
+
+[test_basic] have opened each file again.
+
+Current status of the file system:
+
+        File Name    Length   iNode #
+           Alice         5         0
+             Bob         6         1
+         Charlie        21         2
+           David        20         3
+          Elaine        30         4
+           Frank        30         5
+          George        42         6
+           Harry        40         7
+
+Total Data Blocks:   32,  Used: 10,  Unused: 22
+Total iNode Blocks:   8,  Used: 8,  Unused: 0
+Total Opened Files:   8
+
+File 'Alice' content: Alice
+File 'Bob' content: BobBob
+File 'Charlie' content: CharlieCharlieCharlie
+File 'David' content: DavidDavidDavidDavid
+File 'Elaine' content: ElaineElaineElaineElaineElaine
+File 'Frank' content: FrankFrankFrankFrankFrankFrank
+File 'George' content: GeorgeGeorgeGeorgeGeorgeGeorgeGeorgeGeorge
+File 'Harry' content: HarryHarryHarryHarryHarryHarryHarryHarry
+
+[test_basic] have read and then closed each file.
+
+Current status of the file system:
+
+        File Name    Length   iNode #
+           Alice         5         0
+             Bob         6         1
+         Charlie        21         2
+           David        20         3
+          Elaine        30         4
+           Frank        30         5
+          George        42         6
+           Harry        40         7
+
+Total Data Blocks:   32,  Used: 10,  Unused: 22
+Total iNode Blocks:   8,  Used: 8,  Unused: 0
+Total Opened Files:   0
+
+
+[test_advanced_write] test to write 73 characters:
+ 000000111111222222333333444444555555666666777777888888999999000000111111
+ to the file from position 3.
+File 'Alice' new content: Ali000000111111222222333333444444555555666666777777888888999999000000111111
+
+File 'Bob' new content: Bob000000111111222222333333444444555555666666777777888888999999000000111111
+
+File 'Charlie' new content: Cha000000111111222222333333444444555555666666777777888888999999000000111111
+
+File 'David' new content: Dav000000111111222222333333444444555555666666777777888888999999000000111111
+
+File 'Elaine' new content: Ela000000111111222222333333444444555555666666777777888888999999000000111111
+
+File 'Frank' new content: Fra000000111111222222333333444444555555666666777777888888999999000000111111
+
+File 'George' new content: Geo000000111111222222333333444444555555666666777777888888999999000000111111
+
+File 'Harry' new content: Har000000111111222222333333444444555555666666777777888888999999000000111111
+
+
+[test_advanced_write] have read and then closed each file.
+
+Current status of the file system:
+
+        File Name    Length   iNode #
+           Alice        76         0
+             Bob        76         1
+         Charlie        76         2
+           David        76         3
+          Elaine        76         4
+           Frank        76         5
+          George        76         6
+           Harry        76         7
+
+Total Data Blocks:   32,  Used: 24,  Unused: 8
+Total iNode Blocks:   8,  Used: 8,  Unused: 0
+Total Opened Files:   0
+
+
+[test_advanced_cut] test to cut 36 bytes from position 9.
+File 'Alice' new content: Ali000000777777888888999999000000111111
+
+File 'Bob' new content: Bob000000777777888888999999000000111111
+
+File 'Charlie' new content: Cha000000777777888888999999000000111111
+
+File 'David' new content: Dav000000777777888888999999000000111111
+
+File 'Elaine' new content: Ela000000777777888888999999000000111111
+
+File 'Frank' new content: Fra000000777777888888999999000000111111
+
+File 'George' new content: Geo000000777777888888999999000000111111
+
+File 'Harry' new content: Har000000777777888888999999000000111111
+
+
+[test_advanced_cut] have read and then closed each file.
+
+Current status of the file system:
+
+        File Name    Length   iNode #
+           Alice        40         0
+             Bob        40         1
+         Charlie        40         2
+           David        40         3
+          Elaine        40         4
+           Frank        40         5
+          George        40         6
+           Harry        40         7
+
+Total Data Blocks:   32,  Used: 16,  Unused: 16
+Total iNode Blocks:   8,  Used: 8,  Unused: 0
+Total Opened Files:   0
+
+[test_basic] have deleted all files.
+
+Current status of the file system:
+
+        File Name    Length   iNode #
+
+Total Data Blocks:   32,  Used: 0,  Unused: 32
+Total iNode Blocks:   8,  Used: 0,  Unused: 8
+Total Opened Files:   0
+
+
+
+--------Test for Concurrent Readers/Writers-----------
+
+[main] result of RSFS_create('alice'): 0
+[writer 0] open file alice with RDWR; return fd=0.
+
+Current status of the file system:
+
+        File Name    Length   iNode #
+           alice         0         0
+
+Total Data Blocks:   32,  Used: 0,  Unused: 32
+Total iNode Blocks:   8,  Used: 1,  Unused: 7
+Total Opened Files:   1
+
+[writer 0] write 54 bytes of string.
+[writer 0] read 54 bytes of string: hello 1, hello 2, hello 3, hello 4, hello 5, hello 6, 
+
+Current status of the file system:
+
+        File Name    Length   iNode #
+           alice        54         0
+
+Total Data Blocks:   32,  Used: 2,  Unused: 30
+Total iNode Blocks:   8,  Used: 1,  Unused: 7
+Total Opened Files:   1
+
+[writer 0] close the file.
+[writer 0] open file alice with RDWR; return fd=0.
+
+Current status of the file system:
+
+        File Name    Length   iNode #
+           alice        54         0
+
+Total Data Blocks:   32,  Used: 2,  Unused: 30
+Total iNode Blocks:   8,  Used: 1,  Unused: 7
+Total Opened Files:   1
+
+[writer 0] write 54 bytes of string.
+[writer 0] read 54 bytes of string: hello 1, hello 2, hello 3, hello 4, hello 5, hello 6, 
+
+Current status of the file system:
+
+        File Name    Length   iNode #
+           alice        54         0
+
+Total Data Blocks:   32,  Used: 2,  Unused: 30
+Total iNode Blocks:   8,  Used: 1,  Unused: 7
+Total Opened Files:   1
+
+[writer 0] close the file.
+[reader 0] open file alice with READONLY; return fd=0.
+
+Current status of the file system:
+
+        File Name    Length   iNode #
+           alice        54         0
+
+Total Data Blocks:   32,  Used: 2,  Unused: 30
+Total iNode Blocks:   8,  Used: 1,  Unused: 7
+Total Opened Files:   2
+
+[reader 0] read 54 bytes of string: hello 1, hello 2, hello 3, hello 4, hello 5, hello 6, 
+[reader 1] open file alice with READONLY; return fd=1.
+[reader 2] open file alice with READONLY; return fd=2.
+
+Current status of the file system:
+
+        File Name    Length   iNode #
+           alice        54         0
+
+Total Data Blocks:   32,  Used: 2,  Unused: 30
+Total iNode Blocks:   8,  Used: 1,  Unused: 7
+Total Opened Files:   3
+
+[reader 1] read 54 bytes of string: hello 1, hello 2, hello 3, hello 4, hello 5, hello 6, 
+[reader 3] open file alice with READONLY; return fd=3.
+
+Current status of the file system:
+
+        File Name    Length   iNode #
+           alice        54         0
+
+Total Data Blocks:   32,  Used: 2,  Unused: 30
+Total iNode Blocks:   8,  Used: 1,  Unused: 7
+Total Opened Files:   4
+
+[reader 3] read 54 bytes of string: hello 1, hello 2, hello 3, hello 4, hello 5, hello 6, 
+
+Current status of the file system:
+
+        File Name    Length   iNode #
+           alice        54         0
+
+Total Data Blocks:   32,  Used: 2,  Unused: 30
+Total iNode Blocks:   8,  Used: 1,  Unused: 7
+Total Opened Files:   4
+
+[reader 2] read 54 bytes of string: hello 1, hello 2, hello 3, hello 4, hello 5, hello 6, 
+[reader 0] close the file.
+
+Current status of the file system:
+
+        File Name    Length   iNode #
+           alice        54         0
+
+Total Data Blocks:   32,  Used: 2,  Unused: 30
+Total iNode Blocks:   8,  Used: 1,  Unused: 7
+Total Opened Files:   3
+
+[reader 1] close the file.
+
+Current status of the file system:
+
+        File Name    Length   iNode #
+           alice        54         0
+
+Total Data Blocks:   32,  Used: 2,  Unused: 30
+Total iNode Blocks:   8,  Used: 1,  Unused: 7
+Total Opened Files:   2
+
+[reader 3] close the file.
+
+Current status of the file system:
+
+        File Name    Length   iNode #
+           alice        54         0
+
+Total Data Blocks:   32,  Used: 2,  Unused: 30
+Total iNode Blocks:   8,  Used: 1,  Unused: 7
+Total Opened Files:   1
+
+[reader 2] close the file.
+
+Current status of the file system:
+
+        File Name    Length   iNode #
+           alice        54         0
+
+Total Data Blocks:   32,  Used: 2,  Unused: 30
+Total iNode Blocks:   8,  Used: 1,  Unused: 7
+Total Opened Files:   0
+
+[writer 1] open file alice with RDWR; return fd=0.
+
+Current status of the file system:
+
+        File Name    Length   iNode #
+           alice        54         0
+
+Total Data Blocks:   32,  Used: 2,  Unused: 30
+Total iNode Blocks:   8,  Used: 1,  Unused: 7
+Total Opened Files:   1
+
+[writer 1] write 54 bytes of string.
+[writer 1] read 54 bytes of string: hello 1, hello 2, hello 3, hello 4, hello 5, hello 6, 
+
+Current status of the file system:
+
+        File Name    Length   iNode #
+           alice        54         0
+
+Total Data Blocks:   32,  Used: 2,  Unused: 30
+Total iNode Blocks:   8,  Used: 1,  Unused: 7
+Total Opened Files:   1
+
+[writer 1] close the file.
